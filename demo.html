@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avataaars Generator</title>
+    <script src="avatars.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #avatar-container {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="options">
+            <select id="topType">
+                <option value="shortHair">Short Hair</option>
+                <option value="longHair">Long Hair</option>
+                <option value="hat">Hat</option>
+            </select>
+            <select id="hairColor">
+                <option value="black">Black</option>
+                <option value="blonde">Blonde</option>
+                <option value="brown">Brown</option>
+                <option value="red">Red</option>
+            </select>
+            <select id="eyeType">
+                <option value="default">Default</option>
+                <option value="happy">Happy</option>
+                <option value="squint">Squint</option>
+            </select>
+            <select id="mouthType">
+                <option value="default">Default</option>
+                <option value="smile">Smile</option>
+                <option value="serious">Serious</option>
+            </select>
+            <select id="skinColor">
+                <option value="light">Light</option>
+                <option value="brown">Brown</option>
+                <option value="darkBrown">Dark Brown</option>
+                <option value="black">Black</option>
+            </select>
+            <select id="clotheType">
+                <option value="blazerShirt">Blazer & Shirt</option>
+                <option value="hoodie">Hoodie</option>
+                <option value="overall">Overall</option>
+            </select>
+        </div>
+        <div id="avatar-container"></div>
+    </div>
+
+    <script>
+        function updateAvatar() {
+            const options = {
+                top: document.getElementById('topType').value,
+                hairColor: document.getElementById('hairColor').value,
+                eyes: document.getElementById('eyeType').value,
+                mouth: document.getElementById('mouthType').value,
+                skin: document.getElementById('skinColor').value,
+                clothing: document.getElementById('clotheType').value
+            };
+
+            const svg = Avataaars.create(options);
+            document.getElementById('avatar-container').innerHTML = svg;
+        }
+
+        // Add event listeners to all select elements
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', updateAvatar);
+        });
+
+        // Initial avatar generation
+        updateAvatar();
+    </script>
+</body>
+</html>

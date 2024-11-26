@@ -1,13 +1,3 @@
-<img src="https://github.com/HB0N0/AvataaarsJs/raw/main/header_img.png"></img>
-   
-   
-Use the awesome Avataaars Library by Pablo Stanley ([avataaars.com](https://avataaars.com/)) in any javascript application.   
-   
-This Project uses parts of the [Dicebear Avatars Library](https://github.com/DiceBear/avatars) to generate Avatars with a specified configuration.    
-I fitted this Library for my puposes, if you need functionalitys like random avatar generation or avatars based on seeds have a look at the DiceBear Avatars Library. 
-    
-The main intention is to have all configuration options in one single file with a simple, extensible structure.
-
 ## Getting Started
 Include the JavaScript file into your application
 ```html
